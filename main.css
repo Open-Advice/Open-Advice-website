@@ -1,0 +1,78 @@
+body{
+background : #aaa;
+color : #fff;
+}
+
+#body
+{
+font-family: calibri;
+width: 920px;
+margin: 0 auto;
+border: 2px solid #aaa; 
+/*padding: 30px 40px 0px 40px; */
+font-size : 22px;
+text-align: justify;
+
+background: #fff url('');
+		
+		/* -- CSS3 - add a drop shadow -- */
+		-webkit-box-shadow:0px 0 20px white;
+		-moz-box-shadow:0px 0 20px white; 
+		box-shadow:0px 0 20px white;		 		
+	
+}
+
+a{
+color: white;
+}
+
+#title{
+width  : 920px;
+height : 300px ;
+border : 0px solid;
+background: #44bbcc;
+padding-top: 20px;
+color: black;
+font-size: 120px;
+}
+
+#download{
+float  : right ;
+width  : 430px;
+height : 603px ;
+border : 0px solid;
+background: #225533;
+padding : 20px;
+}
+
+#image{
+width  : 450px;
+height : 643px ;
+border : 0px solid;
+}
+
+#about{
+width  : 878px;
+height : 500px ;
+border : 1px solid #aaa;
+background: #0055bb;
+padding : 20px;
+
+}
+
+#f2{
+float  : right ;
+width  : 418px;
+height : 500px ;
+border : 0px solid;
+background: #225533;
+padding : 20px;
+}
+
+#f1{
+width  : 418px;
+height : 500px ;
+border : 0px solid;
+background: #225533;
+padding : 20px;
+}
