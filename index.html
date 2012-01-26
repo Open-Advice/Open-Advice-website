@@ -1,117 +1,183 @@
+<!DOCTYPE HTML>
 <html>
 <head>
+<meta charset="utf-8">
 <title>OpenAdvice</title>
+<link rel="stylesheet" href="main.css" />
+<script type="text/javascript" src="jquery.min.js" ></script>
+<script>
+$(document).ready(function() {
+  function filterPath(string) {
+  return string
+    .replace(/^\//,'')
+    .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+    .replace(/\/$/,'');
+  }
+  var locationPath = filterPath(location.pathname);
+  var scrollElem = scrollableElement('html', 'body');
 
-<link rel="stylesheet" href="main.css" type="text/css" />
+  $('a[href*=#]').each(function() {
+    var thisPath = filterPath(this.pathname) || locationPath;
+    if (  locationPath == thisPath
+    && (location.hostname == this.hostname || !this.hostname)
+    && this.hash.replace(/#/,'') ) {
+      var $target = $(this.hash), target = this.hash;
+      if (target) {
+        var targetOffset = $target.offset().top;
+        $(this).click(function(event) {
+          event.preventDefault();
+          $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+            location.hash = target;
+          });
+        });
+      }
+    }
+  });
+
+  // use the first element that is "scrollable"
+  function scrollableElement(els) {
+    for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+      var el = arguments[i],
+          $scrollElement = $(el);
+      if ($scrollElement.scrollTop()> 0) {
+        return el;
+      } else {
+        $scrollElement.scrollTop(1);
+        var isScrollable = $scrollElement.scrollTop()> 0;
+        $scrollElement.scrollTop(0);
+        if (isScrollable) {
+          return el;
+        }
+      }
+    }
+    return [];
+  }
+
+});
+</script>
 
 </head>
 
 <body>
-
-<div id="body">
-
-	<div id="title">
-	<center>
-	 <img src="images/Title.gif" height="250px" />
-	</center>
-	</div>
-
-	<div id="download">
-	Open Advice is a knowledge collection from a wide variety of Free Software projects. It answers the question what 42 prominent contributors would have liked to know when they started so you can get a head-start no matter how and where you contribute. <br> 
-	   <h2> <img src="images/read.gif" height="50px" align="left"/> Read More </h2>  <br> 
-	   <h2> <img src="images/download.gif" height="50px" align="left"/> Download PDF </h2> <br>
-	   <h2> <img src="images/cart.png" height="50px" align="left"/> Buy Printed Edition </h2>
-	</div>
-
-	<div id="image">
-	<img src="images/ocom.jpg">
-	</div>
-
-	<div id="about">
-	<h1> Author Grid </h1>
-	<table>
-	<tr> 
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>  
-	</tr>
-	<tr> 
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td> 
-	</tr>
-	<tr> 
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td> 
-	</tr>
-	<tr> 
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td><img src="images/ph.png" height="70px"/></td>
-	<td></td>
-	</tr>
-	</table>
-	</div>
-
-	<div id="f2">
-	You can buy a printed edition of Open Advice.
-    	<h2> <img src="images/Amazon.gif" width="400px" />Buy from Amazon </h2>
-        <h2> <img src="images/lulu.gif" width="400px" />Order from lulu </h2>
-	
-	</div>
-
-	<div id="f1">
-	    Open Advice is available as a free download under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> license. You are encouraged to share it with anyone.
-	    <h2>  Download  </h2>
-	    <h3> <a href=""http://github.com/lydiapintscher/Open-Advice>get source</a>/<a href="http://github.com/lydiapintscher/Open-Advice/issues">report bugs</a></h3>
-	</div>
-	
-	<div id="about">
-	
-	     We hope that after reading the book you are very excited about contributing to a project. <a href="http://openhatch.org">OpenHatch </a> is 
-	     a website where you can find a lot of beginner tasks from a great variety of projects. What are you waiting for? Today is the day to get started.
-            <h2> stay connected </h2>
-            <ul type="none">
-	      <li><a><img src="images/identi.png" height="100px" />identi.ca group</a></li>
-	      <li><a><img src="images/facebook.png" height="100px" />facebook fanpage</a></li>
-	      <li><a href="http://lists.openhatch.org/mailman/listinfo/openadvice">discussion mailing list</a></li>
-	      <li><a href="http://lists.openhatch.org/mailman/listinfo/openadvice-announce">announcement mailing list</a></li>
-	    </ul>
-	</div>
-
-	</div>
-
+<div id="main">
+<div id="container">
+	<div id="logobox">
+    </div>
+    <div id="covbox">
+    </div>
+    <div id="indbox">
+    <h2>Open Advice is a knowledge collection from a wide variety of Free Software projects. It answers the question what 42 prominent contributors would have liked to know when they started so you can get a head-start no matter how and where you contribute.</h2>
+    	<div id="butcont">
+        	<div class="but" id="but1">
+            <a href="#rmobox"><h1>Read More</h1></a>
+            </div>
+        	<div class="but" id="but2">
+            <a href="#authbox"><h1>Authors</h1></a>
+            </div>
+        	<div class="but" id="but3">
+            <a href="#dwnbox"><h1>Download</h1></a>
+            </div>
+            <div class="but" id="but4">
+        	<a href="#buybox"><h1>Buy</h1></a>
+            </div>
+            <div class="but" id="but5">
+        	<a href="#conbox"><h1>Contact</h1></a>
+            </div>
+        </div>
+    </div>
+    <div id="authbox">
+    <h1>Authors</h1>
+    <div id="piccontainer">
+    <div class="pic"><a href="author.html#Alexandra"><img src="images/photos/Alexandra.jpg" height="87" width="87" alt="Alexandra"></a></div>
+     <div class="pic"><a href="author.html#Anne  "><img src = "images/photos/Anne.jpg "  height="87" width="87" alt="Anne"></a></div> 
+     <div class="pic"><a href="author.html#Atul "><img src = "images/photos/Atul.jpg "  height="87" width="87" alt="Atul"></a></div>
+      <div class="pic"><a href="author.html#Dave  "><img src = "images/photos/Dave.jpg "  height="87" width="87" alt="Dave"></a></div> 
+      <div class="pic"><a href="author.html#Duke  "><img src = "images/photos/Duke.jpg "  height="87" width="87" alt="Duke"></a></div> 
+      <div class="pic"><a href="author.html#Evan  "><img src = "images/photos/Evan.jpg "  height="87" width="87" alt="Evan"></a></div> 
+      <div class="pic"><a href="author.html#Federico  "><img src = "images/photos/Federico.jpg "  height="87" width="87" alt="Federico"></a></div> 
+      <div class="pic"><a href="author.html#Frank  "><img src = "images/photos/Frank.jpg "  height="87" width="87" alt="Frank"></a></div> 
+      <div class="pic"><a href="author.html#Georg  "><img src = "images/photos/Georg.jpg "  height="87" width="87" alt="Georg"></a></div> 
+      <div class="pic"><a href="author.html#Guillaume  "><img src = "images/photos/Guillaume.jpg "  height="87" width="87" alt="Guillaume"></a></div> 
+      <div class="pic"><a href="author.html#Henri  "><img src = "images/photos/Henri.jpg "  height="87" width="87" alt="Henri"></a></div> 
+      <div class="pic"><a href="author.html#Jos  "><img src = "images/photos/Jos.jpg "  height="87" width="87" alt="Jos"></a></div> 
+      <div class="pic"><a href="author.html#Leslie  "><img src = "images/photos/Leslie.jpg "  height="87" width="87" alt="Leslie"></a></div> 
+      <div class="pic"><a href="author.html#Lydia  "><img src = "images/photos/Lydia.png "  height="87" width="87" alt="Lydia"></a></div> 
+      <div class="pic"><a href="author.html#Mairin  "><img src = "images/photos/Mairin.jpg "  height="87" width="87" alt="Mairin"></a></div> 
+      <div class="pic"><a href="author.html#Markus  "><img src = "images/photos/Markus.jpg "  height="87" width="87" alt="Markus"></a></div> 
+      <div class="pic"><a href="author.html#Noirin "><img src = "images/photos/Noirin.jpg "  height="87" width="87" alt="Noirin"></a></div> 
+      <div class="pic"><a href="author.html#Rich  "><img src = "images/photos/Rich.jpg "  height="87" width="87" alt="Rich"></a></div> 
+      <div class="pic"><a href="author.html#Runa  "><img src = "images/photos/Runa.jpg "  height="87" width="87" alt="Runa"></a></div> 
+      <div class="pic"><a href="author.html#Selena  "><img src = "images/photos/Selena.jpg "  height="87" width="87" alt="Selena"></a></div> 
+      <div class="pic"><a href="author.html#Shaun  "><img src = "images/photos/Shaun.jpg "  height="87" width="87" alt="Shaun"></a></div> 
+      <div class="pic"><a href="author.html#Stuart  "><img src = "images/photos/Stuart.jpg "  height="87" width="87" alt="Stuart"></a></div> 
+      <div class="pic"><a href="author.html#TillA  "><img src = "images/photos/TillA.jpg "  height="87" width="87" alt="TillA"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div id="piccontainer1">
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div> 
+      <div class="pic"><a href="author.html#  "><img src = "images/photos/ "  height="87" width="87"></a></div>
+      </div>
+    </div>
+    </div>
+    <div id="rmobox">
+    	<h1>Read More</h1>
+        <h2>Free Software projects are changing the software landscape in impressive ways with dedicated users and innovative management. Each person contributes something to the movement in their own way and to their abilities and knowledge. This personal commitment and the power of collaboration over the internet is what makes Free Software great and what brought the authors of this book together.
+<br><br>
+This book is the answer to "What would you have liked to know when you started contributing?". The authors give insights into the many different talents it takes to make a successful software project, coding of course but also design, translation, marketing and other skills. We are here to give you a head start if you are new. And if you have been contributing for a while already, we are here to give you some insight into other areas and projects.</h2>
+    </div>
+    <div id="dwnbox">
+    	<h1>Download</h1>
+        <h2>Open Advice is available as a free download under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a> license. You are encouraged to share it with anyone.</h2>
+        <img src="images/pdf.png" alt="Download" id="download">
+	<a href="http://github.com/lydiapintscher/Open-Advice">get source</a><br><a href="http://github.com/lydiapintscher/Open-Advice/issues">report bugs</a>
+    </div>
+    <div id="buybox">
+    	<h1>Buy</h1>
+        <h2>You can buy a printed edition of Open Advice.</h2>
+        <img src="images/amazon.png" alt="Amazon.com" id="amazon">
+        <img src="images/lulu.png" alt="Lulu.com" id="lulu"><br>
+        <p>Buy from Amazon</p>
+		<p id="p2">Order from Lulu</p>
+    </div>
+    <div id="conbox">
+    <h1 style="color:white;">Stay Connected</h1>
+    <h2 style="color:white;">We hope that after reading the book you are very excited about contributing to a project. <a href="http://openhatch.org">OpenHatch </a> is a website where you can find a lot of beginner tasks from a great variety of projects. What are you waiting for? Today is the day to get started. You can subscribe to the <a href="http://lists.openhatch.org/mailman/listinfo/openadvice-announce">announcement</a> and the <a href="http://lists.openhatch.org/mailman/listinfo/openadvice">discussion mailing list</a>.</h2>
+    <div class="conin" id="con1">
+    <div class="coninin"><h2 style="color:white;">identi.ca Group</h2>
+    </div>
+    </div>
+        <div class="conin" id="con2">
+        <div class="coninin2"><h2 style="color:white;">Facebook Fanpage</h2></div>
+    </div>
+    </div>
+    <div id="foobox"><p>
+    This site was created by Debajyoti Datta, Saransh Sinha & Supreet Pal Singh</p>
+    </div>
+    <a href="#main">
+    <div id="back">
+    </div></a>
+</div>
+</div>
+<div id="shad1"></div>
+<div id="shad2"></div>
+<div id="shad3"></div>
+<div id="shad4"></div>
+<div id="shad5"></div>
+<div id="shad6"></div>
 </body>
-</html
+</html>

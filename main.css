@@ -1,78 +1,302 @@
-body{
-background : #aaa;
-color : #fff;
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family:junctionregularRegular;
+	font-weight:normal;
+}
+*::selection {
+	color: white;
+	background-color:#272727;
+}
+@font-face {
+    font-family: 'junctionregularRegular';
+    src: url('font/Junction-webfont.eot');
+    src: url('font/Junction-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/Junction-webfont.woff') format('woff'),
+         url('font/Junction-webfont.ttf') format('truetype'),
+         url('font/Junction-webfont.svg#junctionregularRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-#body
-{
-font-family: calibri;
-width: 920px;
-margin: 0 auto;
-border: 2px solid #aaa; 
-/*padding: 30px 40px 0px 40px; */
-font-size : 22px;
-text-align: justify;
-
-background: #fff url('');
-		
-		/* -- CSS3 - add a drop shadow -- */
-		-webkit-box-shadow:0px 0 20px white;
-		-moz-box-shadow:0px 0 20px white; 
-		box-shadow:0px 0 20px white;		 		
+h1 {
+	margin:10px;
+	font-size:24px;
+}
+h2 {
+	margin:10px;
+	font-size:17px;
+	line-height:25px;
+}
+p {
+	margin-top:10px;
+	margin-left:26px;
+	float:left;
+}
+#p2 {
+	margin-left:65px;
+}
+body {
+	background-image:url(images/background.jpg);
+	margin: auto;
+}
+#main {
+	width:100%;
+	margin:auto;
+	height:360px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}
+#shad1 {
+	width:100%;
+	margin:auto;
+	height:624px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-top:21px;
+}
+#shad2 {
+	width:100%;
+	margin:auto;
+	height:508px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-top:20px;
+}
+#shad3 {
+	width:100%;
+	margin:auto;
+	height:320px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-top:20px;
+}
+#shad4 {
+	width:100%;
+	margin:auto;
+	height:320px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-top:20px;
+}
+#shad5 {
+	width:100%;
+	margin:auto;
+	height:270px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-top:20px;
+}
+#shad6 {
+	width:100%;
+	margin:auto;
+	height:30px;
+	background-image:url(images/back2.png);
+	background-position:center;
+	background-repeat:no-repeat;
+	margin-top:20px;
+}
 	
+#container {
+	width:900px;
+	margin:auto;
 }
-
-a{
-color: white;
+#logobox {
+	width: 900px;
+	height: 360px;
+	margin:auto;
+	background-color:#50d199;
+	background-position:center;
+	background-image:url(images/logo2.jpg);
+	background-repeat:no-repeat;
+	margin-top:20px;
 }
-
-#title{
-width  : 920px;
-height : 300px ;
-border : 0px solid;
-background: #44bbcc;
-padding-top: 20px;
-color: black;
-font-size: 120px;
+#covbox {
+	width: 440px;
+	height:624px;
+	background-image:url(images/cover.jpg);
+	margin-top: 20px;
+	float:left;
 }
-
-#download{
-float  : right ;
-width  : 430px;
-height : 603px ;
-border : 0px solid;
-background: #225533;
-padding : 20px;
+#indbox {
+	width: 440px;
+	height:624px;
+	float:right;
+	background-color:#f1f7e2;
+	margin-left: 20px;
+	margin-top: 20px;
 }
-
-#image{
-width  : 450px;
-height : 643px ;
-border : 0px solid;
+#authbox {	
+	width: 900px;
+	height: 510px;;
+	margin:auto;
+	background-color:#abe1ed;
+	margin-top:20px;
+	float:left;
 }
-
-#about{
-width  : 878px;
-height : 500px ;
-border : 1px solid #aaa;
-background: #0055bb;
-padding : 20px;
-
+#rmobox {
+	width: 900px;
+	height:320px;
+	margin-top: 20px;
+	float:left;
+	background-color:#74c0cf;
 }
-
-#f2{
-float  : right ;
-width  : 418px;
-height : 500px ;
-border : 0px solid;
-background: #225533;
-padding : 20px;
+	
+#dwnbox {
+	width: 440px;
+	height:320px;
+	margin-top: 20px;
+	float:left;
+	background-color:#4fa9b8;
 }
-
-#f1{
-width  : 418px;
-height : 500px ;
-border : 0px solid;
-background: #225533;
-padding : 20px;
+#buybox {
+	width: 440px;
+	height:320px;
+	margin-top: 20px;
+	margin-left: 20px;
+	float:right;
+	background-color:#4faaba;
+}
+#conbox {
+	width: 900px;
+	height: 270px;
+	margin:auto;
+	background-color:#4e7178;
+	margin-top:20px;
+	float:right;
+}
+#back {
+	margin:auto;
+	float:left;
+	background-image:url(images/back.png);
+	width:320px;
+	height:130px;
+	margin-top:20px;
+	margin-left:290px;
+}
+#foobox {
+	margin:auto;
+	float:left;
+	width:900px;
+	background-color:#272727;
+	color:#fff;
+	height:30px;
+	text-align:center;
+	margin-top:20px;
+	font-size:11px;
+}
+#foobox p {
+	text-align:center;
+	width:900px;
+	padding:0;
+	margin:0;
+	margin-top:6px;
+}
+#amazon {
+	margin:20px;
+	margin-left:30px;
+}
+#lulu {
+	margin:20px;
+	float:right;
+	margin-right:30px;
+}
+#download {
+	margin:10px;
+}
+.conin {
+	width:420px;
+	height:110px;
+	float:left;
+	margin-left:20px;
+	margin-top:10px;
+}
+#con1 {
+	background-image:url(images/identica2.png);
+	background-repeat:no-repeat;
+}
+#con2 {
+	background-image:url(images/facebook.png);
+	background-repeat:no-repeat;
+}
+.coninin {
+	margin-top:45px;
+	margin-left:170px;
+}
+.coninin2 {
+	margin-top:45px;
+	margin-left:110px;
+}
+.pic {
+	width: 87px;
+	height:87px;
+	margin:1px;
+	background-color:black;
+	background-image:url(images/ph.png);
+	float:left;
+}
+#piccontainer {
+	margin-top:20px;
+	margin-left:6px;
+}
+#piccontainer1 {
+	width:178px;
+	margin-left:356px;
+}
+#butcont {
+	margin-top:20px;
+}
+.but {
+	height:50px;
+	width:220px;
+	margin:10px;
+	cursor:pointer;
+}
+.but h1 {
+	padding-top:8px;
+	margin-left:60px;
+}
+#but1 {
+	background-image:url(images/read_2.png);
+	background-repeat:no-repeat;
+}
+#but2 {
+	background-image:url(images/auth_1.png);
+	background-repeat:no-repeat;
+}
+#but3 {
+	background-image:url(images/pdf_1.png);
+	background-repeat:no-repeat;
+}
+#but4 {
+	background-image:url(images/buy_1.png);
+	background-repeat:no-repeat;
+}
+#but5 {
+	background-image:url(images/conn_1.png);
+	background-repeat:no-repeat;
+}
+.but {
+ -webkit-transition: all 300ms ease;
+ -moz-transition: all 300ms ease;
+ -o-transition: all 300ms ease;
+ transition: all 300ms ease;
+ }
+.but:hover {
+	background-color:#272727;
+	color:white;
+}
+a {
+	text-decoration:none;
+	color:inherit;
 }
