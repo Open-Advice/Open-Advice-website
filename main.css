@@ -4,6 +4,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	border: none;
 	font-family:junctionregularRegular;
 	font-weight:normal;
 }
@@ -250,8 +251,8 @@ body {
 	margin-left:6px;
 }
 #piccontainer1 {
-	width:178px;
-	margin-left:356px;
+	width:278px;
+	margin-left:310px;
 }
 #butcont {
 	margin-top:20px;
@@ -297,6 +298,5 @@ body {
 	color:white;
 }
 a {
-	text-decoration:none;
 	color:inherit;
 }
