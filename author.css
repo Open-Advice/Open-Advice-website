@@ -38,6 +38,7 @@ p {
 	margin-top:10px;
 	margin-left:40px;
 	float:left;
+	text-align:center;
 }
 body {
 	background-image:url(images/background.jpg);
@@ -47,6 +48,7 @@ body {
 #container {
 	width:900px;
 	margin:auto;
+	margin-top:20px;
 }
 #logobox {
 	width: 900px;
@@ -54,50 +56,10 @@ body {
 	margin:auto;
 	background-position:center;
 	background-repeat:no-repeat;
-	margin-top:20px;
-}/*
-.b1 {
-	width:900px;
-	margin:auto;
 }
-.bin1 {
-	margin-top:20px;
-	float:left;
-	width:900px;
-	height:150px;
-	background-color:#f2f7e3;
-}
-.bin2 {
-	margin-top:20px;
-	float:left;
-	width:900px;
-	height:150px;
-	background-color:#abe1ed;
-}
-.bin3 {
-	margin-top:20px;
-	float:left;
-	width:900px;
-	height:150px;
-	background-color:#74c0d0;
-}
-.bin4 {
-	margin-top:20px;
-	float:left;
-	width:900px;
-	height:150px;
-	background-color:#63b4c3;
-}
-.bin5 {
-	margin-top:20px;
-	float:left;
-	width:900px;
-	height:150px;
-	background-color:#499fae;
-}*/
 #main2 {
 	width:900px;
-	height:9440px;
+	height:9660px;
 	margin-top:-220px;
 	background-image:url(images/author.png);
 	background-repeat:no-repeat;
@@ -107,7 +69,6 @@ body {
 	float:left;
 	width:200px;
 	height:200px;
-	background-color:red;
 }
 .entry2 .entdet {
 	float:left;
@@ -153,7 +114,6 @@ body {
 	float:right;
 	width:200px;
 	height:200px;
-	background-color:red;
 }
 #contdet {
 	position:absolute;

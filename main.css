@@ -5,7 +5,7 @@
 	margin: 0;
 	padding: 0;
 	border: none;
-	font-family:junctionregularRegular;
+	font-family:junctionregularRegular, Arial, Helvetica, sans-serif;
 	font-weight:normal;
 }
 *::selection {
@@ -23,7 +23,6 @@
     font-style: normal;
 
 }
-
 h1 {
 	margin:10px;
 	font-size:24px;
@@ -39,7 +38,11 @@ p {
 	float:left;
 }
 #p2 {
-	margin-left:65px;
+	margin-left:85px;
+}
+#p3 {
+	margin-left:37px;
+	margin-top:0px;
 }
 body {
 	background-image:url(images/background.jpg);
@@ -111,16 +114,15 @@ body {
 #container {
 	width:900px;
 	margin:auto;
+	margin-top:20px;
 }
 #logobox {
 	width: 900px;
 	height: 360px;
 	margin:auto;
-	background-color:#50d199;
 	background-position:center;
 	background-image:url(images/logo2.jpg);
 	background-repeat:no-repeat;
-	margin-top:20px;
 }
 #covbox {
 	width: 440px;
@@ -216,10 +218,10 @@ body {
 	margin:10px;
 }
 .conin {
-	width:420px;
+	width:286.6666666666667px;
 	height:110px;
 	float:left;
-	margin-left:20px;
+	margin-left:10px;
 	margin-top:10px;
 }
 #con1 {
@@ -228,6 +230,10 @@ body {
 }
 #con2 {
 	background-image:url(images/facebook.png);
+	background-repeat:no-repeat;
+}
+#con3 {
+	background-image:url(images/twitter.jpg);
 	background-repeat:no-repeat;
 }
 .coninin {
